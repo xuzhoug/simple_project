@@ -1,0 +1,7 @@
+   // render: function (createElements) {
+    //     return createElements(App);
+    // },
+
+   render: c=>c(App),
+
+   
