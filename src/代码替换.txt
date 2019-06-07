@@ -3,5 +3,63 @@
     // },
 
    render: c=>c(App),
+ 
 
+   	<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">底部选项卡-div模式</h1>
+		</header> 
+
+     // {
+            //     test: /\.(ttf|eot|svg|woff|woff2)/,
+            //     use: 'url-loader'
+            // },
+
+router-link 链接规则
+router-view 显示功能
+router:路由对象
+
+linkActiveClass:'mui-active' 替换默认样式: link-active.
+
+scss中 &:表示交集 并且
+.mint-swipe {
+
+  .mint-swipe-item {
+      &:nth-child(1) {
+
+    }
+      &:nth-child(2) {
+
+    }
+      &:nth-child(3) {
+  
+    }
+  }
+}
+
+   <mt-swipe :show-indicators="false" class="ms2">
+      <mt-swipe-item>1</mt-swipe-item>
+      <mt-swipe-item>2</mt-swipe-item>
+      <mt-swipe-item>3</mt-swipe-item>
+    </mt-swipe>
+    
+// import { Toast } from'mint-ui';
+    
+     created() {
+    this.getlunbotu();
+  },
+
+     getlunbotu(){
+      this.$http.get('http://www.bing.com/').then((result) => {
+        console.log("*******"+result.body);
+        if(result.body===0){
+          this.lunbotulist=result.body.message;
+           Toast('获取成功!');
+        }else{
+          Toast('获取失败!');
+        }
+      }).catch((err) => {
+        
+      });
+    }
    

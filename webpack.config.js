@@ -74,10 +74,10 @@ module.exports = {
                 test: /\.(jpg|jpeg|gif|bmp|png)/,
                 use: 'url-loader?limit=20000&name=[hash:12][name].[ext]'
             },
-            {
-                test: /\.(ttf|eot|svg|woff|woff2)/,
-                use: 'url-loader'
-            },
+            // {
+            //     test: /\.(ttf|eot|svg|woff|woff2)/,
+            //     use: 'url-loader'
+            // },
             {
                 test: /\.vue$/,
                 use: 'vue-loader'

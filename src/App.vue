@@ -1,33 +1,36 @@
 <template>
   <div class="app_container">
-    <h1>xxxx</h1>
+    <h1>App根组件</h1>
+    <br>
     <!-- header-->
     <mt-header fixed title="mintHead模板"></mt-header>
-    
-  
+    <!-- middle-->
+    <transition>
+      <router-view></router-view>
+    </transition>
+
     <!-- tabbar -->
-    	<!-- <header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">底部选项卡-div模式</h1>
-		</header>
-		<nav class="mui-bar mui-bar-tab">
-			<a class="mui-tab-item mui-active" href="#tabbar">
-				<span class="mui-icon mui-icon-home"></span>
-				<span class="mui-tab-label">首页</span>
-			</a>
-			<a class="mui-tab-item" href="#tabbar-with-chat">
-				<span class="mui-icon mui-icon-email"><span class="mui-badge">9</span></span>
-				<span class="mui-tab-label">消息</span>
-			</a>
-			<a class="mui-tab-item" href="#tabbar-with-contact">
-				<span class="mui-icon mui-icon-contact"></span>
-				<span class="mui-tab-label">通讯录</span>
-			</a>
-			<a class="mui-tab-item" href="#tabbar-with-map">
-				<span class="mui-icon mui-icon-gear"></span>
-				<span class="mui-tab-label">设置</span>
-			</a>
-		</nav> -->
+    <!-- home_component  message_component  plus_component search_component -->
+    <nav class="mui-bar mui-bar-tab">
+      <router-link class="mui-tab-item" to="/home_component">
+        <span class="mui-icon mui-icon-home-filled"></span>
+        <span class="mui-tab-label">首页</span>
+      </router-link>
+      <router-link class="mui-tab-item" to="/message_component">
+        <span class="mui-icon mui-icon-email">
+          <span class="mui-badge">9</span>
+        </span>
+        <span class="mui-tab-label">消息</span>
+      </router-link>
+      <router-link class="mui-tab-item" to="/plus_component">
+        <span class="mui-icon mui-icon-plus-filled"></span>
+        <span class="mui-tab-label">采购</span>
+      </router-link>
+      <router-link class="mui-tab-item" to="search_component">
+        <span class="mui-icon mui-icon-search"></span>
+        <span class="mui-tab-label">搜索</span>
+      </router-link>
+    </nav>
   </div>
 </template>
 <script>
@@ -35,6 +38,7 @@
 <style  lang="scss" scoped>
 .app_container {
   padding-top: 100px;
+  overflow-x: hidden;
 }
 .title {
   margin: 20px 15px 10px;
@@ -68,4 +72,24 @@
 oa-contact-position {
   float: left;
 }
+.v-enter
+ {
+  opacity: 0;
+  transform: translateX(100%);
+}
+ .v-leave-to{
+  opacity: 0;
+  transform: translateX(-50%);
+}
+.v-enter-active,
+.v-leave-active {
+  transition: all 1s ease;
+}
+.v-move {
+  transition: all 04s ease;
+}
+.v-leave-active {
+  position: absolute;
+}
+  
 </style>
