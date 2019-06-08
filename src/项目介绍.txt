@@ -22,6 +22,7 @@
 6 导入路由对象    设置路由的样式:高亮   
 7 页面跳转功能: link 判断路由匹配规则  view
 8 加载轮播图  vue-resource  设置请求和响应,并将响应信息输出在页面中.
+8 添加子组件 并设置路由规则.
 
 组件 
 home_component  message_component  plus_component search_component
